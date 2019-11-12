@@ -1,0 +1,31 @@
+<br/><br/>
+<h2 style="text-align: center;">{{title | uppercase}}</h2>
+<div class="form-style-8">  
+  <form>
+    <input type="text" class="inputFields" placeholder="Add Item" #item />
+    <input type="text" class="inputFields" placeholder="Add Category" #cat />
+    <input type="text" class="inputFields" placeholder="Add Total Items" #tot />
+    <input type="text" class="inputFields" placeholder="Add Total Price in Rupees" #price />
+  </form>
+<button (click) = "addTodo(item.value,cat.value,tot.value,price.value)" id="join-btn">ADD</button>
+  <br/><p></p>
+<table>
+  <tr>
+    <th>ITEM</th>
+    <th>CATEGORY</th>
+    <th>TOTAL UNITS</th>
+    <th>TOTAL PRICE (in Ruppees)</th>
+    <th>PRICE PER ITEM</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{item.label}}</td>
+    <td>{{item.priority}}</td>
+    <td>{{item.total}}</td>
+    <td>{{item.money}}</td>
+    <td>{{item.money/item.total}}</td>
+    <td>
+      <button (click)="deleteTodo(item)" class="button">DELETE</button>
+    </td>
+  </tr>
+</table>
+</div>
